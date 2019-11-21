@@ -1,7 +1,7 @@
 class ServiceProducts {
     constructor(containerProducts, productsCatalog) {
         this.container = document.querySelector(containerProducts);
-        this.productsCatalog = productsCatalog;
+        this.productsCatalog = productsCatalog; //Загружаем каталог
         this.create();
 
         /*		Так должны выглядеть итоговые элемент, создаваемый с помощью методов create и getElement:
@@ -12,16 +12,21 @@ class ServiceProducts {
                     <button class="btn">Добавить в корзину</button>
                 </div>*/
     }
-    create() {//Создаем необходимые элементы
-        var wrapper = document.createElement('slot');//Обертка. Необходима, что бы каждый раз не производить манипуляции с DOM, а выводить в DOM все элементы из каталога разом
+    create() { //Создаем необходимые элементы
+        var wrapper = document.createElement('slot'); //Обертка. Необходима, что бы каждый раз не производить манипуляции с DOM, а выводить в DOM все элементы из каталога разом
 
         for (var i = 0; i < this.productsCatalog.length; i++) {
-        	//Создаем необходимые элементы с помощью метода getElement:
+            //Создаем необходимые элементы с помощью метода getElement:
             var item = this.getElement({ tagName: 'div', className: 'item' });
             var name = this.getElement({ tagName: 'div', className: 'name', innerText: this.productsCatalog[i].name });
             var img = this.getElement({ tagName: 'div', className: 'img', backgroundImage: `url(${this.productsCatalog[i].img})` });
             var price = this.getElement({ tagName: 'div', className: 'price', innerText: this.productsCatalog[i].price.toLocaleString() + ' USD' });
-            var btn = this.getElement({ tagName: 'button', className: 'btn', innerText: 'Добавить в корзину' });
+            var btn = this.getElement({ tagName: 'button', className: 'btn', innerText: 'Добавить в корзину', id: this.productsCatalog[i].id });
+
+            btn.addEventListener('click', function() {
+                var id = this.getAttribute('data-id');
+                alert(id);
+            })
 
             //Добавляем элементы в обертку:
             item.appendChild(name);
@@ -30,7 +35,7 @@ class ServiceProducts {
             item.appendChild(btn);
             wrapper.appendChild(item);
         }
-        this.container.appendChild(wrapper);//Добавляем оертку в DOM
+        this.container.appendChild(wrapper); //Добавляем обертку в DOM
     }
 
     getElement(options) {
@@ -44,6 +49,9 @@ class ServiceProducts {
         if ('backgroundImage' in options) {
             element.style.backgroundImage = options.backgroundImage;
         }
+        if ('id' in options) {
+            element.setAttribute('data-id', options.id);
+        }
         return element;
     }
 
@@ -52,4 +60,4 @@ class ServiceProducts {
     }
 }
 
-var serviceProducts = new ServiceProducts('.container-products', productsCatalog);//Создаем экземпляр класса
+var serviceProducts = new ServiceProducts('.container-products', productsCatalog); //Создаем экземпляр класса

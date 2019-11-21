@@ -63,6 +63,12 @@ CONTAINER-PRODUCTS
 	font-size: inherit;
 }
 
+.btn-active {
+	border: 1px solid transparent; /* Делаем рамку прозрачной */
+    background-image: linear-gradient(to right top, #0923cf, #4621d7, #671ede, #821ae5, #9c12eb);
+}
+
+
 /**************************************
 CONTAINER-COUNTER
 ***************************************/
