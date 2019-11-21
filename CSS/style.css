@@ -7,7 +7,14 @@ body {
 	padding: 0;
 	font-family: sans-serif;
 	line-height: 1.7;
+	display: flex;
+	justify-content: space-between; /* Что бы то, что находится справа было прижато к правой стороне, а то, что с лева к левой */
+	align-items: flex-start; /* Что бы элементы не растягвались по вертикали по максимому */
 }
+
+/**************************************
+CONTAINER-PRODUCTS
+***************************************/
 
 .container-products {
 	display: flex;
@@ -54,4 +61,25 @@ body {
 	background: none;
 	font-family: inherit;
 	font-size: inherit;
+}
+
+/**************************************
+CONTAINER-COUNTER
+***************************************/
+
+.container-counter {
+	flex-shrink: 0; /* Что бы не сжимался */
+	width: 60px;
+	height: 60px;
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	background-image: url(../img/cart.svg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: contain;
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 20px;
 }
