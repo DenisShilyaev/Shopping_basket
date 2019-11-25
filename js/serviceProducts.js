@@ -25,7 +25,7 @@ class ServiceProducts {
 
             btn.addEventListener('click', function() {
                 var id = this.getAttribute('data-id');
-                alert(id);
+                serviceStore.putProduct(id);
             })
 
             //Добавляем элементы в обертку:
