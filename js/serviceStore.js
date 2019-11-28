@@ -9,17 +9,17 @@ class ServiceStore {
         return products;
     }
 
-        putProduct(id) {
+    putProduct(id) {
         var products = this.getProducts();
         var index = products.indexOf(id);
-        if (index === -1) {//Проверяем наличие в localStorage данного данного товара и добаляем его, если его нет
+        if (index === -1) {
             products.push(id);
-            var pushProduct = true;//Если true, то кнопка добавления товара нажата
+            var pushProduct = true; //Если true, то кнопка добавления товара нажата
         } else {
-            products.splice(index, 1);//Если данный элемент уже присутствует в localStorage, то удаляем его
-            var pushProduct = false;//Если false, то кнопка добавления товара НЕ нажата
+            products.splice(index, 1); //Если данный элемент уже присутствует в localStorage, то удаляем его
+            var pushProduct = false; //Если false, то кнопка добавления товара НЕ нажата
         }
-        localStorage.setItem('products', JSON.stringify(products));//Записываем массив вlocalStorage    
+        localStorage.setItem('products', JSON.stringify(products)); //Записываем массив вlocalStorage    
         return {
             pushProduct: pushProduct,
             products: products
