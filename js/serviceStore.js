@@ -8,18 +8,22 @@ class ServiceStore {
         }
         return products;
     }
-    putProduct(id) {
+
+        putProduct(id) {
         var products = this.getProducts();
         var index = products.indexOf(id);
         if (index === -1) {//Проверяем наличие в localStorage данного данного товара и добаляем его, если его нет
             products.push(id);
-            var pushProduct = true;
+            var pushProduct = true;//Если true, то кнопка добавления товара нажата
         } else {
             products.splice(index, 1);//Если данный элемент уже присутствует в localStorage, то удаляем его
-            var pushProduct = false;
+            var pushProduct = false;//Если false, то кнопка добавления товара НЕ нажата
         }
-
         localStorage.setItem('products', JSON.stringify(products));//Записываем массив вlocalStorage    
+        return {
+            pushProduct: pushProduct,
+            products: products
+        };
     }
 }
 var serviceStore = new ServiceStore();
