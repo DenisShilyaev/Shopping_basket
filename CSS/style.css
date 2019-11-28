@@ -79,7 +79,7 @@ CONTAINER-COUNTER
 	height: 60px;
 	display: flex; 
 	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
 	background-image: url(../img/cart.svg);
 	background-repeat: no-repeat;
 	background-position: top center;
