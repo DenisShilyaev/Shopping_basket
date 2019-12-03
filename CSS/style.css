@@ -95,7 +95,7 @@ CONTAINER-CART
 *****************************************/
 
 .container-cart {
-	display: flex;
+	display: none;
 	align-items: flex-start;
 	position: fixed;
 	width: 97%;
