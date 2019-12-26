@@ -22,6 +22,7 @@ CONTAINER-PRODUCTS
 }
 
 .item {
+	display: block;
 	width: 250px;
 	margin: 20px;
 	padding: 15px 30px;
@@ -76,7 +77,7 @@ CONTAINER-COUNTER
 .container-counter {
 	flex-shrink: 0; /* Что бы не сжимался */
 	width: 60px;
-	height: 60px;
+	height: 55px;
 	display: flex; 
 	justify-content: center;
 	align-items: flex-end;

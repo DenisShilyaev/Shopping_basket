@@ -8,7 +8,6 @@ class ServiceStore {
         }
         return products;
     }
-
     putProduct(id) {
         var products = this.getProducts();
         var index = products.indexOf(id);
@@ -19,7 +18,7 @@ class ServiceStore {
             products.splice(index, 1); //Если данный элемент уже присутствует в localStorage, то удаляем его
             var pushProduct = false; //Если false, то кнопка добавления товара НЕ нажата
         }
-        localStorage.setItem('products', JSON.stringify(products)); //Записываем массив вlocalStorage    
+        localStorage.setItem('products', JSON.stringify(products)); //Записываем массив вlocalStorage
         return {
             pushProduct: pushProduct,
             products: products

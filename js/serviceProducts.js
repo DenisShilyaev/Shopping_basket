@@ -6,20 +6,21 @@ class ServiceProducts {
         this.create();
 
         /*      Так должны выглядеть итоговые элемент, создаваемый с помощью методов create и getElement:
-                <div class="item">
-                    <div class="name">CANON</div>
-                    <div class="img" style="background-image: url(https://media.istockphoto.com/photos/cup-of-tea-on-a-delicate-pink-background-with-pink-meringues-picture-id1127396690);"></div>
-                    <div class="price">1000</div>
-                    <button class="btn">Добавить в корзину</button>
-                </div>*/
+        <div class="item">
+            <div class="name">CANON</div>
+            <div class="img" style="background-image: url(https://media.istockphoto.com/photos/cup-of-tea-on-a-delicate-pink-background-with-pink-meringues-picture-id1127396690);"></div>
+            <div class="price">1000</div>
+            <button class="btn">Добавить в корзину</button>
+        </div>*/
     }
     create() { //Создаем необходимые элементы
         var wrapper = document.createElement('slot'); //Обертка. Необходима, что бы каждый раз не производить манипуляции с DOM, а выводить в DOM все элементы из каталога разом
-        var products = serviceStore.getProducts();
 
+        var products = serviceStore.getProducts();
         this.containerCounter.innerText = products.length;
 
         for (var i = 0; i < this.productsCatalog.length; i++) {
+
             var index = products.indexOf(this.productsCatalog[i].id);
             if (index === -1) {
                 var activeClass = '';
@@ -59,10 +60,6 @@ class ServiceProducts {
         }
         this.container.appendChild(wrapper); //Добавляем обертку в DOM
     }
-
-    actions() {
-        //
-    }
 }
 
-var serviceProducts = new ServiceProducts('.container-products', '.container-counter', productsCatalog); //Создаем экземпляр класса
+var serviceProducts = new ServiceProducts('.container-products', '.container-counter', productsCatalog);
