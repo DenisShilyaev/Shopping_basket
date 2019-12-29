@@ -3,7 +3,7 @@
 
 ## Описание
 Вид начального экрана:
-![Interface](https://github.com/DenisShilyaev/Shopping_basket/raw/master/source/Interface.PNG)
+![Interface](https://github.com/DenisShilyaev/Shopping_basket/raw/master/for_README/Interface.PNG)
 
 На начальном экране представлен список товаров. 
 По нажатию на кнопку "Добавить в корзину":
@@ -12,6 +12,6 @@
 * Становится доступной кнопка "Удалить из корзины".
 
 По нажатию на корзину отображается содержимое корзины:
-![Basket](https://github.com/DenisShilyaev/Shopping_basket/raw/master/source/Basket.PNG)
+![Basket](https://github.com/DenisShilyaev/Shopping_basket/raw/master/for_README/Basket.PNG)
 
 Если Вы нашли ошибку или у Вас есть предложение по улучшению проекта, то, пожалуйста, напишите мне.
