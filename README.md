@@ -1,6 +1,9 @@
 # Корзина покупок
 Создана на основе видео урока с целью практики работы c HTML, CSS и Javascript. 
 
+## Инструкция
+Что бы запустить приложение откройте файл .../Shopping_basket/index.html в любом браузере.
+
 ## Описание
 Вид начального экрана:
 ![Interface](https://github.com/DenisShilyaev/Shopping_basket/raw/master/for_README/Interface.PNG)
